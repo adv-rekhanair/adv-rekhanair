@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    // Core
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+
+    // TypeScript & React
+    "ms-vscode.vscode-typescript-next",
+    "dsznajder.es7-react-js-snippets",
+
+    // Git & versioning
+    "eamodio.gitlens",
+    "vivaxy.vscode-conventional-commits",
+    "mhutchie.git-graph",
+
+    // DX utilities
+    "christian-kohler.path-intellisense",
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+    "aaron-bond.better-comments",
+    "PKief.material-icon-theme",
+    "mikestead.dotenv",
+    "usernamehw.errorlens",
+    "antfu.browse-lite"
+  ]
+}
