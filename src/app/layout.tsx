@@ -5,7 +5,30 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { DisclaimerModal } from "@/components/ui/disclaimer-modal";
 import { siteConfig } from "@/config/site";
+import { practiceAreas } from "@/data/practice-areas";
 import "./globals.css";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress:
+      "Room No. 13 & 14, Ground Floor, Empire Building, Opposite Central Police Station, Near High Court",
+    addressLocality: "Kochi",
+    addressRegion: "Kerala",
+    postalCode: "682018",
+    addressCountry: "IN",
+  },
+  areaServed: { "@type": "State", name: "Kerala" },
+  knowsAbout: practiceAreas.map((a) => a.title),
+  memberOf: { "@type": "Organization", name: "Bar Council of Kerala" },
+};
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -43,6 +66,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="flex min-h-full flex-col">
         {GA_ID && (
           <>
