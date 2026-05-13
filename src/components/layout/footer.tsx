@@ -45,6 +45,11 @@ export function Footer() {
                   {siteConfig.phone}
                 </a>
               </li>
+              <li>
+                <a href={`tel:${siteConfig.phone2}`} className="hover:text-amber-700">
+                  {siteConfig.phone2}
+                </a>
+              </li>
             </ul>
           </div>
         </div>

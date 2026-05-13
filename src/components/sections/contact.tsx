@@ -65,7 +65,7 @@ export function ContactSection() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.55, ease }}
-          className="mt-8 text-sm text-gray-500"
+          className="mx-auto mt-8 max-w-md rounded-lg border border-gray-200 bg-white px-6 py-4 text-sm text-gray-500"
         >
           {siteConfig.address}
         </motion.p>

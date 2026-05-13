@@ -4,9 +4,8 @@ import { Card } from "@/components/ui/card";
 import { motion, ease, fadeUp, stagger } from "@/components/ui/motion";
 
 const stats = [
-  { label: "Years of Practice", value: "10+" },
-  { label: "Practice Areas", value: "6" },
-  { label: "Courts", value: "High Court · Lower Court · Family Court" },
+  { label: "Years of Practice", value: "20+" },
+  { label: "Practice Areas", value: "4" },
 ];
 
 export function AboutSection() {
