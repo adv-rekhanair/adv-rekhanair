@@ -4,14 +4,14 @@ export function AboutSection() {
       <div className="mx-auto max-w-4xl">
         <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">About</p>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Dedicated to Justice, Grounded in Kerala Law
+          Rekha Nair — Advocate
         </h2>
         <div className="mt-8 space-y-4 text-base leading-relaxed text-gray-600">
           <p>
             Rekha Nair is an advocate enrolled with the Bar Council of Kerala, practising primarily
-            before the Kerala High Court and subordinate courts across the state. With over a decade
-            of courtroom experience, she brings rigorous legal analysis and a client-first approach
-            to every matter she handles.
+            before the Kerala High Court and subordinate courts across the state. She has been in
+            practice for over a decade, with experience across civil, criminal, and family law
+            matters.
           </p>
           <p>
             Her practice spans civil litigation, family and matrimonial law, property disputes, and
@@ -23,7 +23,7 @@ export function AboutSection() {
         <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3">
           {[
             { label: "Years of Practice", value: "10+" },
-            { label: "Cases Handled", value: "500+" },
+            { label: "Courts", value: "High Court & Subordinate" },
             { label: "Practice Areas", value: "6" },
           ].map((stat) => (
             <div key={stat.label} className="rounded-lg border border-gray-200 bg-white p-6">

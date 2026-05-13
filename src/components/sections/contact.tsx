@@ -8,11 +8,11 @@ export function ContactSection() {
           Get in Touch
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          Schedule a Consultation
+          Contact Information
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-base text-gray-600">
-          Reach out by email or phone for an initial consultation. All enquiries are treated with
-          strict confidentiality.
+          Contact details are provided below for general enquiries. All communications are treated
+          with strict professional confidentiality.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -20,7 +20,7 @@ export function ContactSection() {
             href={`mailto:${siteConfig.email}`}
             className="flex w-full items-center justify-center gap-2 rounded-md bg-amber-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-amber-800 sm:w-auto"
           >
-            Email Us
+            Email
           </a>
           <a
             href={`tel:${siteConfig.phone}`}

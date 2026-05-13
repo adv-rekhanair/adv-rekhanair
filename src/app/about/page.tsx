@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Rekha Nair — her background, experience, and commitment to legal excellence in Kerala.",
+    "Professional background and qualifications of Rekha Nair, Advocate, enrolled with the Bar Council of Kerala.",
 };
 
 export default function AboutPage() {
@@ -16,19 +16,18 @@ export default function AboutPage() {
       <div className="mt-10 space-y-5 text-base leading-relaxed text-gray-600">
         <p>
           Rekha Nair is an advocate enrolled with the Bar Council of Kerala, practising primarily
-          before the Kerala High Court and subordinate courts across the state. With over a decade
-          of courtroom experience, she brings rigorous legal analysis and a client-first approach to
-          every matter she handles.
+          before the Kerala High Court and subordinate courts across the state. She has been in
+          practice for over a decade, with experience across civil, criminal, and family law
+          matters.
         </p>
         <p>
           Her educational background in law, combined with sustained exposure to diverse legal
-          disputes across civil, criminal, and family domains, has equipped her with a comprehensive
-          understanding of both procedural law and substantive rights as applicable in Kerala.
+          disputes across civil, criminal, and family domains, has given her familiarity with both
+          procedural law and substantive rights as applicable in Kerala.
         </p>
         <p>
-          Rekha is committed to plain-language communication with clients, ensuring they fully
-          understand the proceedings at every stage of litigation. She believes that an informed
-          client is an empowered one.
+          She practices before the Kerala High Court, District Courts, Family Courts, Sessions
+          Courts, and Consumer Dispute Redressal Commissions in the state.
         </p>
       </div>
 

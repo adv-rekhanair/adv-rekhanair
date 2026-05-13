@@ -13,7 +13,7 @@ export function PracticeAreasSection() {
             Practice Areas
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600">
-            A focused range of legal services tailored to the needs of clients across Kerala.
+            Areas of legal practice before courts and tribunals in Kerala.
           </p>
         </div>
 

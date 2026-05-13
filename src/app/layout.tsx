@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { DisclaimerModal } from "@/components/ui/disclaimer-modal";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
+        <DisclaimerModal />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -3,8 +3,7 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Get in touch with Rekha Nair Advocate for legal consultations in Kerala. All enquiries are strictly confidential.",
+  description: "Contact details for Rekha Nair, Advocate, enrolled with the Bar Council of Kerala.",
 };
 
 export default function ContactPage() {
@@ -13,8 +12,8 @@ export default function ContactPage() {
       <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">Contact</p>
       <h1 className="text-4xl font-bold tracking-tight text-gray-900">Get in Touch</h1>
       <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600">
-        For initial consultations or general enquiries, reach out through any of the channels below.
-        All communications are treated with strict professional confidentiality.
+        Contact details are provided below for general enquiries. All communications are treated
+        with strict professional confidentiality.
       </p>
 
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">

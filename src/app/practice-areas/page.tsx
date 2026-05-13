@@ -16,8 +16,7 @@ export default function PracticeAreasPage() {
         </p>
         <h1 className="text-4xl font-bold tracking-tight text-gray-900">Practice Areas</h1>
         <p className="mt-4 text-base leading-relaxed text-gray-600">
-          A focused range of legal services for individuals and businesses navigating the courts of
-          Kerala.
+          Areas of legal practice before courts and tribunals in Kerala.
         </p>
       </div>
 
