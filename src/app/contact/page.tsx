@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Card } from "@/components/ui/card";
 import { FadeUp } from "@/components/ui/motion";
+import { ContactForm } from "@/components/sections/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -52,6 +53,14 @@ export default function ContactPage() {
             court holidays).
           </p>
         </Card>
+      </FadeUp>
+
+      <FadeUp delay={0.3} className="mt-14">
+        <h2 className="text-xl font-semibold tracking-tight text-gray-900">Send an Enquiry</h2>
+        <p className="mt-2 mb-6 text-sm text-gray-600">
+          Fill in the form below and your message will be forwarded directly.
+        </p>
+        <ContactForm />
       </FadeUp>
     </div>
   );

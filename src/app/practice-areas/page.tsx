@@ -2,6 +2,24 @@ import type { Metadata } from "next";
 import { practiceAreas } from "@/data/practice-areas";
 import { cardVariants } from "@/components/ui/card";
 import { FadeUp, StaggerList, StaggerItem } from "@/components/ui/motion";
+import type { PracticeAreaIcon } from "@/types";
+import {
+  ScalesIcon,
+  FamilyIcon,
+  PropertyIcon,
+  ShieldIcon,
+  ClipboardIcon,
+  ScrollIcon,
+} from "@/components/ui/icons";
+
+const iconMap: Record<PracticeAreaIcon, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+  scales: ScalesIcon,
+  family: FamilyIcon,
+  property: PropertyIcon,
+  shield: ShieldIcon,
+  clipboard: ClipboardIcon,
+  scroll: ScrollIcon,
+};
 
 export const metadata: Metadata = {
   title: "Practice Areas",
@@ -23,15 +41,18 @@ export default function PracticeAreasPage() {
       </FadeUp>
 
       <StaggerList className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {practiceAreas.map((area) => (
-          <StaggerItem key={area.id} className={cardVariants("hover", "p-7")}>
-            <span className="text-4xl" role="img" aria-label={area.title}>
-              {area.icon}
-            </span>
-            <h2 className="mt-5 text-lg font-semibold text-gray-900">{area.title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-gray-600">{area.description}</p>
-          </StaggerItem>
-        ))}
+        {practiceAreas.map((area) => {
+          const Icon = iconMap[area.icon];
+          return (
+            <StaggerItem key={area.id} className={cardVariants("hover", "p-7")}>
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-50">
+                <Icon className="text-amber-600" width={24} height={24} />
+              </div>
+              <h2 className="mt-5 text-lg font-semibold text-gray-900">{area.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-gray-600">{area.description}</p>
+            </StaggerItem>
+          );
+        })}
       </StaggerList>
     </div>
   );
