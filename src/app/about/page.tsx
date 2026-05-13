@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { siteConfig } from "@/config/site";
 import { Card } from "@/components/ui/card";
 import { FadeUp } from "@/components/ui/motion";
 
@@ -40,7 +41,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-gray-900">Qualifications</h2>
           <ul className="mt-4 space-y-2 text-sm text-gray-600">
             <li>LL.B — [University Name], Kerala</li>
-            <li>Enrolled Advocate — Bar Council of Kerala</li>
+            <li>Enrolled Advocate — Bar Council of Kerala ({siteConfig.barCouncilNo})</li>
             <li>Member — Kerala High Court Advocates Association</li>
           </ul>
         </Card>

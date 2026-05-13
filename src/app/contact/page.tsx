@@ -22,28 +22,41 @@ export default function ContactPage() {
         </p>
       </FadeUp>
 
-      <FadeUp delay={0.1} className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
-        {[
-          { label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
-          { label: "Phone", value: siteConfig.phone, href: `tel:${siteConfig.phone}` },
-          { label: "Chamber", value: siteConfig.address, href: undefined },
-        ].map((item) => (
-          <Card key={item.label}>
-            <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">
-              {item.label}
-            </p>
-            {item.href ? (
-              <a
-                href={item.href}
-                className="mt-2 block text-sm font-medium text-gray-900 hover:text-amber-700"
-              >
-                {item.value}
-              </a>
-            ) : (
-              <p className="mt-2 text-sm font-medium text-gray-900">{item.value}</p>
-            )}
-          </Card>
-        ))}
+      <FadeUp delay={0.1} className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Card>
+          <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">Email</p>
+          <a
+            href={`mailto:${siteConfig.email}`}
+            className="mt-2 block text-sm font-medium break-all text-gray-900 hover:text-amber-700"
+          >
+            {siteConfig.email}
+          </a>
+        </Card>
+        <Card>
+          <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">Phone</p>
+          <a
+            href={`tel:${siteConfig.phone}`}
+            className="mt-2 block text-sm font-medium text-gray-900 hover:text-amber-700"
+          >
+            {siteConfig.phone}
+          </a>
+          <a
+            href={`tel:${siteConfig.phone2}`}
+            className="mt-1 block text-sm font-medium text-gray-900 hover:text-amber-700"
+          >
+            {siteConfig.phone2}
+          </a>
+        </Card>
+        <Card>
+          <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">Chamber</p>
+          <p className="mt-2 text-sm font-medium text-gray-900">{siteConfig.address}</p>
+        </Card>
+        <Card>
+          <p className="text-xs font-semibold tracking-wider text-gray-400 uppercase">
+            Bar Council No.
+          </p>
+          <p className="mt-2 text-sm font-medium text-gray-900">{siteConfig.barCouncilNo}</p>
+        </Card>
       </FadeUp>
 
       <FadeUp delay={0.2} className="mt-12">
