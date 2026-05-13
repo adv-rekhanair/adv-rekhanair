@@ -1,8 +1,10 @@
+export type PracticeAreaIcon = "scales" | "family" | "property" | "shield" | "clipboard" | "scroll";
+
 export interface PracticeArea {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: PracticeAreaIcon;
 }
 
 export interface Testimonial {

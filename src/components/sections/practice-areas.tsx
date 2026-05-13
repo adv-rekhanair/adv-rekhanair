@@ -1,5 +1,23 @@
 import Link from "next/link";
 import { practiceAreas } from "@/data/practice-areas";
+import type { PracticeAreaIcon } from "@/types";
+import {
+  ScalesIcon,
+  FamilyIcon,
+  PropertyIcon,
+  ShieldIcon,
+  ClipboardIcon,
+  ScrollIcon,
+} from "@/components/ui/icons";
+
+const iconMap: Record<PracticeAreaIcon, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
+  scales: ScalesIcon,
+  family: FamilyIcon,
+  property: PropertyIcon,
+  shield: ShieldIcon,
+  clipboard: ClipboardIcon,
+  scroll: ScrollIcon,
+};
 
 export function PracticeAreasSection() {
   return (
@@ -18,18 +36,21 @@ export function PracticeAreasSection() {
         </div>
 
         <ul className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {practiceAreas.map((area) => (
-            <li
-              key={area.id}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-            >
-              <span className="text-3xl" role="img" aria-label={area.title}>
-                {area.icon}
-              </span>
-              <h3 className="mt-4 text-lg font-semibold text-gray-900">{area.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">{area.description}</p>
-            </li>
-          ))}
+          {practiceAreas.map((area) => {
+            const Icon = iconMap[area.icon];
+            return (
+              <li
+                key={area.id}
+                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-50">
+                  <Icon className="text-amber-600" width={24} height={24} />
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-gray-900">{area.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">{area.description}</p>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="mt-12 text-center">
