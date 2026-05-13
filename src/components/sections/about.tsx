@@ -16,8 +16,7 @@ export function AboutSection() {
           <p>
             Her practice spans civil litigation, family and matrimonial law, property disputes, and
             criminal defence — with a particular focus on matters that require sustained High Court
-            engagement. She is committed to plain-language communication with clients, ensuring they
-            fully understand the proceedings at every stage.
+            engagement.
           </p>
         </div>
         <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3">
