@@ -54,8 +54,34 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-200 pt-6 text-center text-xs text-gray-400">
-          © {year} {siteConfig.name}. All rights reserved.
+        <div className="mt-8 flex flex-col items-center gap-3 border-t border-gray-200 pt-6 sm:flex-row sm:justify-between">
+          <p className="text-xs text-gray-400">
+            © {year} {siteConfig.name}. All rights reserved.
+          </p>
+          <div className="flex items-center gap-4">
+            {siteConfig.social.whatsapp && (
+              <a
+                href={siteConfig.social.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="text-xs text-gray-400 transition-colors hover:text-amber-700"
+              >
+                WhatsApp
+              </a>
+            )}
+            {siteConfig.social.linkedin && (
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-xs text-gray-400 transition-colors hover:text-amber-700"
+              >
+                LinkedIn
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </footer>

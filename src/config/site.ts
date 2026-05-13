@@ -20,7 +20,7 @@ export const siteConfig = {
   ],
   social: {
     linkedin: "",
-    twitter: "",
+    whatsapp: "https://wa.me/919847025510",
   },
 } as const;
 
