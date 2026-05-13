@@ -73,6 +73,22 @@ export function ClipboardIcon(props: IconProps) {
   );
 }
 
+export function BalanceIcon(props: IconProps) {
+  return (
+    <svg {...defaults} strokeLinecap="round" strokeLinejoin="round" {...props}>
+      <line x1="12" y1="3" x2="12" y2="21" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="6" x2="5" y2="13" />
+      <line x1="3" y1="6" x2="1" y2="13" />
+      <path d="M1 13 Q3 16 5 13" />
+      <line x1="21" y1="6" x2="23" y2="13" />
+      <line x1="21" y1="6" x2="19" y2="13" />
+      <path d="M19 13 Q21 16 23 13" />
+      <line x1="9" y1="21" x2="15" y2="21" />
+    </svg>
+  );
+}
+
 export function ScrollIcon(props: IconProps) {
   return (
     <svg {...defaults} {...props}>
