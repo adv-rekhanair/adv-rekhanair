@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/components/ui/button";
 
 export function Hero() {
   return (
@@ -14,16 +15,10 @@ export function Hero() {
         {siteConfig.description}
       </p>
       <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-        <Link
-          href="/contact"
-          className="rounded-md bg-amber-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-amber-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
-        >
+        <Link href="/contact" className={buttonVariants("primary")}>
           Get in Touch
         </Link>
-        <Link
-          href="/practice-areas"
-          className="rounded-md border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:border-amber-700 hover:text-amber-700"
-        >
+        <Link href="/practice-areas" className={buttonVariants("secondary")}>
           Practice Areas
         </Link>
       </div>

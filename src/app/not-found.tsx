@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
@@ -8,10 +9,7 @@ export default function NotFound() {
       <p className="mt-4 text-base text-gray-600">
         The page you are looking for does not exist or has been moved.
       </p>
-      <Link
-        href="/"
-        className="mt-8 rounded-md bg-amber-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-amber-800"
-      >
+      <Link href="/" className={buttonVariants("primary", "mt-8")}>
         Return Home
       </Link>
     </div>

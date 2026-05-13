@@ -1,3 +1,5 @@
+import { Card } from "@/components/ui/card";
+
 export function AboutSection() {
   return (
     <section className="bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
@@ -25,10 +27,10 @@ export function AboutSection() {
             { label: "Courts", value: "High Court & Subordinate" },
             { label: "Practice Areas", value: "6" },
           ].map((stat) => (
-            <div key={stat.label} className="rounded-lg border border-gray-200 bg-white p-6">
+            <Card key={stat.label} variant="white">
               <dt className="text-sm text-gray-500">{stat.label}</dt>
               <dd className="mt-1 text-3xl font-bold text-amber-700">{stat.value}</dd>
-            </div>
+            </Card>
           ))}
         </dl>
       </div>

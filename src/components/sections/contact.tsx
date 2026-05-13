@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { buttonVariants } from "@/components/ui/button";
 
 export function ContactSection() {
   return (
@@ -18,13 +19,19 @@ export function ContactSection() {
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
             href={`mailto:${siteConfig.email}`}
-            className="flex w-full items-center justify-center gap-2 rounded-md bg-amber-700 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-amber-800 sm:w-auto"
+            className={buttonVariants(
+              "primary",
+              "flex w-full items-center justify-center gap-2 sm:w-auto",
+            )}
           >
             Email
           </a>
           <a
             href={`tel:${siteConfig.phone}`}
-            className="flex w-full items-center justify-center gap-2 rounded-md border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:border-amber-700 hover:text-amber-700 sm:w-auto"
+            className={buttonVariants(
+              "secondary",
+              "flex w-full items-center justify-center gap-2 sm:w-auto",
+            )}
           >
             {siteConfig.phone}
           </a>

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Rekha Nair",
   title: "Rekha Nair — Advocate",
   description:
-    "Experienced advocate based in Kerala, specialising in civil litigation, family law, property disputes, and High Court appearances.",
+    "Experienced advocate based in Kerala, specialising in civil litigation, family law, property disputes, legal scrutiny, constitutional matters, cases under SARFAESE act and High Court appearances.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   email: "adv.rekhanair@gmail.com",
   phone: "+91 98470 25510",

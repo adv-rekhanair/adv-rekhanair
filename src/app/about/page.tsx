@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Card } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "About",
@@ -31,14 +32,14 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="mt-12 rounded-xl border border-gray-200 bg-gray-50 p-8">
+      <Card className="mt-12 p-8">
         <h2 className="text-xl font-semibold text-gray-900">Qualifications</h2>
         <ul className="mt-4 space-y-2 text-sm text-gray-600">
           <li>LL.B — [University Name], Kerala</li>
           <li>Enrolled Advocate — Bar Council of Kerala</li>
           <li>Member — Kerala High Court Advocates Association</li>
         </ul>
-      </div>
+      </Card>
     </div>
   );
 }

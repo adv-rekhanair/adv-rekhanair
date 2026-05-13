@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { practiceAreas } from "@/data/practice-areas";
 import type { PracticeAreaIcon } from "@/types";
+import { cardVariants } from "@/components/ui/card";
 import {
   ScalesIcon,
   FamilyIcon,
@@ -39,10 +40,7 @@ export function PracticeAreasSection() {
           {practiceAreas.map((area) => {
             const Icon = iconMap[area.icon];
             return (
-              <li
-                key={area.id}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-              >
+              <li key={area.id} className={cardVariants("hover")}>
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-50">
                   <Icon className="text-amber-600" width={24} height={24} />
                 </div>

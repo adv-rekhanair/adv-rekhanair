@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { practiceAreas } from "@/data/practice-areas";
+import { cardVariants } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Practice Areas",
   description:
-    "Explore Rekha Nair's areas of legal expertise including civil litigation, family law, property disputes, and High Court writ petitions.",
+    "Explore Rekha Nair's areas of legal expertise including civil litigation, family law, property disputes, legal scrutiny, constitutional matters, cases under SARFAESE act and High Court writ petitions.",
 };
 
 export default function PracticeAreasPage() {
@@ -22,10 +23,7 @@ export default function PracticeAreasPage() {
 
       <ul className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {practiceAreas.map((area) => (
-          <li
-            key={area.id}
-            className="rounded-xl border border-gray-200 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
-          >
+          <li key={area.id} className={cardVariants("hover", "p-7")}>
             <span className="text-4xl" role="img" aria-label={area.title}>
               {area.icon}
             </span>
