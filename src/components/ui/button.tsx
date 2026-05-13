@@ -6,7 +6,7 @@ const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-amber-700 text-white shadow-sm hover:bg-amber-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700",
   secondary:
-    "border border-gray-300 text-gray-700 shadow-sm hover:border-amber-700 hover:text-amber-700",
+    "border border-gray-300 text-gray-700 shadow-sm hover:border-amber-700 hover:text-amber-700 dark:border-gray-600 dark:text-gray-300 dark:hover:border-amber-500 dark:hover:text-amber-500",
   dark: "bg-gray-900 text-white hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2",
 };
 

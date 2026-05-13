@@ -3,10 +3,13 @@
 import { siteConfig } from "@/config/site";
 import { buttonVariants } from "@/components/ui/button";
 import { motion, ease, fadeUp, stagger } from "@/components/ui/motion";
+import { useLanguage } from "@/contexts/language-context";
 
 export function ContactSection() {
+  const { t } = useLanguage();
+
   return (
-    <section className="bg-gray-50 px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+    <section className="bg-gray-50 px-4 py-14 sm:px-6 sm:py-20 lg:px-8 dark:bg-gray-900">
       <motion.div
         className="mx-auto max-w-3xl text-center"
         initial="hidden"
@@ -19,21 +22,21 @@ export function ContactSection() {
           transition={{ duration: 0.55, ease }}
           className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase"
         >
-          Get in Touch
+          {t.contact.label}
         </motion.p>
         <motion.h2
           variants={fadeUp}
           transition={{ duration: 0.55, ease }}
-          className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100"
         >
-          Contact Information
+          {t.contact.heading}
         </motion.h2>
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.55, ease }}
-          className="mx-auto mt-4 max-w-xl text-base text-gray-600"
+          className="mx-auto mt-4 max-w-xl text-base text-gray-600 dark:text-gray-400"
         >
-          Contact details are provided below for general enquiries.
+          {t.contact.subheading}
         </motion.p>
 
         <motion.div
@@ -48,7 +51,7 @@ export function ContactSection() {
               "flex w-full items-center justify-center gap-2 sm:w-auto",
             )}
           >
-            Email
+            {t.contact.email}
           </a>
           <a
             href={`tel:${siteConfig.phone}`}
@@ -64,7 +67,7 @@ export function ContactSection() {
         <motion.p
           variants={fadeUp}
           transition={{ duration: 0.55, ease }}
-          className="mx-auto mt-8 max-w-md rounded-lg border border-gray-200 bg-white px-6 py-4 text-sm text-gray-500"
+          className="mx-auto mt-8 max-w-md rounded-lg border border-gray-200 bg-white px-6 py-4 text-sm text-gray-500 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400"
         >
           {siteConfig.address}
         </motion.p>

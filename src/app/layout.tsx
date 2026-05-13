@@ -4,6 +4,8 @@ import Script from "next/script";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { DisclaimerModal } from "@/components/ui/disclaimer-modal";
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import { LanguageProvider } from "@/contexts/language-context";
 import { siteConfig } from "@/config/site";
 import { practiceAreas } from "@/data/practice-areas";
 import "./globals.css";
@@ -67,12 +69,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <head>
+        {/* Prevent flash of unstyled dark mode */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var s=localStorage.getItem('theme'),d=window.matchMedia('(prefers-color-scheme:dark)').matches;if(s==='dark'||(s===null&&d))document.documentElement.classList.add('dark')})()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col bg-white dark:bg-gray-950 dark:text-gray-100">
         {GA_ID && (
           <>
             <Script
@@ -84,10 +92,14 @@ export default function RootLayout({
             </Script>
           </>
         )}
-        <DisclaimerModal />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <LanguageProvider>
+            <DisclaimerModal />
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

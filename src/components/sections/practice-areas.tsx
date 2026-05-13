@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { practiceAreas } from "@/data/practice-areas";
+import { useLanguage } from "@/contexts/language-context";
 import type { PracticeAreaIcon } from "@/types";
 import { cardVariants } from "@/components/ui/card";
 import {
@@ -24,8 +25,10 @@ const iconMap: Record<PracticeAreaIcon, React.ComponentType<React.SVGProps<SVGSV
 };
 
 export function PracticeAreasSection() {
+  const { t } = useLanguage();
+
   return (
-    <section className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+    <section className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-8 dark:bg-gray-950">
       <div className="mx-auto max-w-6xl">
         <motion.div
           className="text-center"
@@ -39,21 +42,21 @@ export function PracticeAreasSection() {
             transition={{ duration: 0.55, ease }}
             className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase"
           >
-            Expertise
+            {t.practiceAreas.label}
           </motion.p>
           <motion.h2
             variants={fadeUp}
             transition={{ duration: 0.55, ease }}
-            className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+            className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100"
           >
-            Practice Areas
+            {t.practiceAreas.heading}
           </motion.h2>
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.55, ease }}
-            className="mx-auto mt-4 max-w-2xl text-base text-gray-600"
+            className="mx-auto mt-4 max-w-2xl text-base text-gray-600 dark:text-gray-400"
           >
-            Areas of legal practice before courts and tribunals in Kerala.
+            {t.practiceAreas.subheading}
           </motion.p>
         </motion.div>
 
@@ -76,8 +79,12 @@ export function PracticeAreasSection() {
                 <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-50">
                   <Icon className="text-amber-600" width={24} height={24} />
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-gray-900">{area.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{area.description}</p>
+                <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
+                  {area.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                  {area.description}
+                </p>
               </motion.li>
             );
           })}
@@ -95,7 +102,7 @@ export function PracticeAreasSection() {
             href="/practice-areas"
             className="inline-flex items-center text-sm font-semibold text-amber-700 hover:underline"
           >
-            View all practice areas →
+            {t.practiceAreas.viewAll}
           </Link>
         </motion.div>
       </div>

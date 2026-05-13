@@ -3,10 +3,11 @@ import { cn } from "@/lib/utils";
 export type CardVariant = "default" | "white" | "hover" | "amber";
 
 const variantClasses: Record<CardVariant, string> = {
-  default: "rounded-xl border border-gray-200 bg-gray-50",
-  white: "rounded-xl border border-gray-200 bg-white",
-  hover: "rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md",
-  amber: "rounded-xl border border-amber-100 bg-amber-50",
+  default: "rounded-xl border border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900",
+  white: "rounded-xl border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900",
+  hover:
+    "rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-gray-800 dark:bg-gray-900",
+  amber: "rounded-xl border border-amber-100 bg-amber-50 dark:border-amber-900 dark:bg-amber-950",
 };
 
 export function cardVariants(variant: CardVariant = "default", className?: string): string {

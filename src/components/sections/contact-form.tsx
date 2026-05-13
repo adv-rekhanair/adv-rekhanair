@@ -10,14 +10,14 @@ import { motion } from "@/components/ui/motion";
 import { cn } from "@/lib/utils";
 
 const inputBase =
-  "mt-1 block w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:outline-none focus:ring-1";
+  "mt-1 block w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:outline-none focus:ring-1 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-600";
 
 function inputClass(hasError: boolean) {
   return cn(
     inputBase,
     hasError
-      ? "border-red-400 focus:border-red-500 focus:ring-red-500"
-      : "border-gray-300 focus:border-amber-700 focus:ring-amber-700",
+      ? "border-red-400 focus:border-red-500 focus:ring-red-500 dark:border-red-700"
+      : "border-gray-300 focus:border-amber-700 focus:ring-amber-700 dark:border-gray-700 dark:focus:border-amber-600 dark:focus:ring-amber-600",
   );
 }
 
@@ -70,10 +70,12 @@ export function ContactForm() {
         initial={{ opacity: 0, scale: 0.96, y: 8 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-        className="rounded-lg border border-green-200 bg-green-50 px-6 py-8 text-center"
+        className="rounded-lg border border-green-200 bg-green-50 px-6 py-8 text-center dark:border-green-900 dark:bg-green-950"
       >
-        <p className="text-sm font-semibold text-green-800">Enquiry received.</p>
-        <p className="mt-1 text-sm text-green-700">
+        <p className="text-sm font-semibold text-green-800 dark:text-green-300">
+          Enquiry received.
+        </p>
+        <p className="mt-1 text-sm text-green-700 dark:text-green-400">
           Your message has been forwarded. You will be contacted at the earliest convenience.
         </p>
       </motion.div>
@@ -84,7 +86,10 @@ export function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="cf-name" className="block text-sm font-medium text-gray-700">
+          <label
+            htmlFor="cf-name"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
             Full Name <span className="text-amber-700">*</span>
           </label>
           <input
@@ -98,7 +103,10 @@ export function ContactForm() {
           <FieldError message={errors.name?.message} />
         </div>
         <div>
-          <label htmlFor="cf-phone" className="block text-sm font-medium text-gray-700">
+          <label
+            htmlFor="cf-phone"
+            className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+          >
             Phone Number <span className="text-amber-700">*</span>
           </label>
           <input
@@ -114,7 +122,10 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="cf-email" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="cf-email"
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
           Email Address <span className="text-amber-700">*</span>
         </label>
         <input
@@ -129,7 +140,10 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="cf-message" className="block text-sm font-medium text-gray-700">
+        <label
+          htmlFor="cf-message"
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+        >
           Enquiry / Requirement <span className="text-amber-700">*</span>
         </label>
         <textarea
@@ -143,8 +157,8 @@ export function ContactForm() {
       </div>
 
       {serverError && (
-        <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3">
-          <p className="text-sm text-red-700">{serverError}</p>
+        <div className="rounded-md border border-red-200 bg-red-50 px-4 py-3 dark:border-red-900 dark:bg-red-950">
+          <p className="text-sm text-red-700 dark:text-red-400">{serverError}</p>
         </div>
       )}
 

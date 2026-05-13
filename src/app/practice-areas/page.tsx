@@ -34,8 +34,10 @@ export default function PracticeAreasPage() {
         <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">
           Expertise
         </p>
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900">Practice Areas</h1>
-        <p className="mt-4 text-base leading-relaxed text-gray-600">
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+          Practice Areas
+        </h1>
+        <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-400">
           Areas of legal practice before courts and tribunals in Kerala.
         </p>
       </FadeUp>
@@ -48,8 +50,12 @@ export default function PracticeAreasPage() {
               <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-amber-50">
                 <Icon className="text-amber-600" width={24} height={24} />
               </div>
-              <h2 className="mt-5 text-lg font-semibold text-gray-900">{area.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600">{area.description}</p>
+              <h2 className="mt-5 text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {area.title}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                {area.description}
+              </p>
             </StaggerItem>
           );
         })}

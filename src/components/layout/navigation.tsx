@@ -6,10 +6,20 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 import { AnimatePresence, motion, ease } from "@/components/ui/motion";
+import { useLanguage } from "@/contexts/language-context";
+import type { Translations } from "@/lib/translations";
+
+const navKeys: Record<string, keyof Translations["nav"]> = {
+  "/": "home",
+  "/about": "about",
+  "/practice-areas": "practiceAreas",
+  "/contact": "contact",
+};
 
 export function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -28,10 +38,10 @@ export function Navigation() {
                 href={item.href}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-amber-700",
-                  pathname === item.href ? "text-amber-700" : "text-gray-600",
+                  pathname === item.href ? "text-amber-700" : "text-gray-600 dark:text-gray-400",
                 )}
               >
-                {item.label}
+                {t.nav[navKeys[item.href] ?? "home"]}
               </Link>
             </li>
           ))}
@@ -39,7 +49,7 @@ export function Navigation() {
       </nav>
 
       <button
-        className="flex items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-amber-700 md:hidden"
+        className="flex items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-amber-700 md:hidden dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-amber-500"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls="mobile-menu"
@@ -88,7 +98,7 @@ export function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.2, ease }}
-            className="fixed inset-x-0 top-16 z-40 border-b border-gray-200 bg-white shadow-lg md:hidden"
+            className="fixed inset-x-0 top-16 z-40 border-b border-gray-200 bg-white shadow-lg md:hidden dark:border-gray-800 dark:bg-gray-950"
           >
             <nav aria-label="Mobile navigation">
               <ul className="space-y-1 px-4 py-3">
@@ -103,11 +113,13 @@ export function Navigation() {
                       href={item.href}
                       className={cn(
                         "block rounded-md px-3 py-3 text-base font-medium transition-colors hover:bg-amber-50 hover:text-amber-700",
-                        pathname === item.href ? "bg-amber-50 text-amber-700" : "text-gray-700",
+                        pathname === item.href
+                          ? "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-400"
+                          : "text-gray-700 dark:text-gray-300",
                       )}
                       onClick={() => setOpen(false)}
                     >
-                      {item.label}
+                      {t.nav[navKeys[item.href] ?? "home"]}
                     </Link>
                   </motion.li>
                 ))}
