@@ -2,10 +2,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-      <Skeleton className="mb-3 h-4 w-36" />
-      <Skeleton className="h-10 w-72" />
-      <Skeleton className="mt-4 h-5 w-96" />
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
+      <div className="text-center">
+        <Skeleton className="mx-auto mb-3 h-4 w-24" />
+        <Skeleton className="mx-auto h-10 w-64" />
+        <Skeleton className="mx-auto mt-4 h-5 w-96" />
+      </div>
       <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: 6 }).map((_, i) => (
           <div key={i} className="rounded-xl border border-gray-100 p-6">
@@ -13,6 +15,7 @@ export default function Loading() {
             <Skeleton className="mt-4 h-5 w-3/4" />
             <Skeleton className="mt-2 h-4 w-full" />
             <Skeleton className="mt-1 h-4 w-5/6" />
+            <Skeleton className="mt-1 h-4 w-2/3" />
           </div>
         ))}
       </div>
