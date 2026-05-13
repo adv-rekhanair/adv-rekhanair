@@ -2,10 +2,22 @@
 
 import { motion, ease, fadeUp, stagger } from "@/components/ui/motion";
 import { empanelments } from "@/data/empanelments";
+import { useLanguage } from "@/contexts/language-context";
 
-const visible = empanelments;
+function getCategoryLabel(category: string, labels: Record<string, string>): string {
+  return labels[category] ?? category;
+}
 
 export function EmpanelmentsSection() {
+  const { t } = useLanguage();
+
+  const categoryLabels: Record<string, string> = {
+    "Public Sector Bank": t.empanelments.publicSectorBank,
+    "Non-Banking Financial Company": t.empanelments.nbfc,
+    "Housing Finance Company": t.empanelments.housingFinance,
+    "Real Estate Developer": t.empanelments.realEstate,
+  };
+
   return (
     <section className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-8 dark:bg-gray-950">
       <motion.div
@@ -17,13 +29,13 @@ export function EmpanelmentsSection() {
       >
         <motion.div variants={fadeUp} transition={{ duration: 0.55, ease }} className="text-center">
           <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">
-            Institutional Appointments
+            {t.empanelments.label}
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100">
-            Panel Advocate
+            {t.empanelments.heading}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base text-gray-600 dark:text-gray-400">
-            Empanelled as legal counsel by the following financial institutions.
+            {t.empanelments.subheading}
           </p>
         </motion.div>
 
@@ -32,7 +44,7 @@ export function EmpanelmentsSection() {
           transition={{ duration: 0.55, ease }}
           className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {visible.map((item) => (
+          {empanelments.map((item) => (
             <div
               key={item.name}
               className="rounded-lg border border-gray-200 bg-gray-50 px-6 py-5 dark:border-gray-800 dark:bg-gray-900"
@@ -41,7 +53,7 @@ export function EmpanelmentsSection() {
                 {item.name}
               </p>
               <p className="mt-1 text-xs font-medium tracking-wide text-gray-400 uppercase dark:text-gray-500">
-                {item.category}
+                {getCategoryLabel(item.category, categoryLabels)}
               </p>
             </div>
           ))}

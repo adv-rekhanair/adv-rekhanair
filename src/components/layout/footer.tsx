@@ -3,6 +3,14 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { useLanguage } from "@/contexts/language-context";
+import type { Translations } from "@/lib/translations";
+
+const navKeys: Record<string, keyof Translations["nav"]> = {
+  "/": "home",
+  "/about": "about",
+  "/practice-areas": "practiceAreas",
+  "/contact": "contact",
+};
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -16,7 +24,7 @@ export function Footer() {
             <p className="text-base font-semibold text-gray-900 dark:text-gray-100">
               {siteConfig.name}
             </p>
-            <p className="mt-1 text-sm text-amber-700">Advocate</p>
+            <p className="mt-1 text-sm text-amber-700">{t.footer.advocate}</p>
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">{siteConfig.address}</p>
           </div>
 
@@ -31,7 +39,7 @@ export function Footer() {
                     href={item.href}
                     className="text-sm text-gray-500 transition-colors hover:text-amber-700 dark:text-gray-400 dark:hover:text-amber-500"
                   >
-                    {item.label}
+                    {t.nav[navKeys[item.href] ?? "home"]}
                   </Link>
                 </li>
               ))}

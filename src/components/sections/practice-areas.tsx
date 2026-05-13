@@ -69,6 +69,14 @@ export function PracticeAreasSection() {
         >
           {practiceAreas.map((area) => {
             const Icon = iconMap[area.icon];
+            const items = t.practiceAreaItems as Record<
+              string,
+              { title: string; description: string }
+            >;
+            const translated = items[area.id] ?? {
+              title: area.title,
+              description: area.description,
+            };
             return (
               <motion.li
                 key={area.id}
@@ -80,10 +88,10 @@ export function PracticeAreasSection() {
                   <Icon className="text-amber-600" width={24} height={24} />
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-gray-900 dark:text-gray-100">
-                  {area.title}
+                  {translated.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                  {area.description}
+                  {translated.description}
                 </p>
               </motion.li>
             );

@@ -8,6 +8,7 @@ import { submitContactForm } from "@/app/actions/contact";
 import { Button } from "@/components/ui/button";
 import { motion } from "@/components/ui/motion";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/language-context";
 
 const inputBase =
   "mt-1 block w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:outline-none focus:ring-1 dark:bg-gray-900 dark:text-gray-100 dark:placeholder-gray-600";
@@ -27,6 +28,7 @@ function FieldError({ message }: { message?: string }) {
 }
 
 export function ContactForm() {
+  const { t } = useLanguage();
   const [serverError, setServerError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
@@ -73,10 +75,10 @@ export function ContactForm() {
         className="rounded-lg border border-green-200 bg-green-50 px-6 py-8 text-center dark:border-green-900 dark:bg-green-950"
       >
         <p className="text-sm font-semibold text-green-800 dark:text-green-300">
-          Enquiry received.
+          {t.contactForm.successTitle}
         </p>
         <p className="mt-1 text-sm text-green-700 dark:text-green-400">
-          Your message has been forwarded. You will be contacted at the earliest convenience.
+          {t.contactForm.successBody}
         </p>
       </motion.div>
     );
@@ -90,13 +92,13 @@ export function ContactForm() {
             htmlFor="cf-name"
             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Full Name <span className="text-amber-700">*</span>
+            {t.contactForm.name} <span className="text-amber-700">*</span>
           </label>
           <input
             id="cf-name"
             type="text"
             autoComplete="name"
-            placeholder="Your full name"
+            placeholder={t.contactForm.namePlaceholder}
             className={inputClass(!!errors.name)}
             {...register("name")}
           />
@@ -107,13 +109,13 @@ export function ContactForm() {
             htmlFor="cf-phone"
             className="block text-sm font-medium text-gray-700 dark:text-gray-300"
           >
-            Phone Number <span className="text-amber-700">*</span>
+            {t.contactForm.phone} <span className="text-amber-700">*</span>
           </label>
           <input
             id="cf-phone"
             type="tel"
             autoComplete="tel"
-            placeholder="+91 XXXXX XXXXX"
+            placeholder={t.contactForm.phonePlaceholder}
             className={inputClass(!!errors.phone)}
             {...register("phone")}
           />
@@ -126,13 +128,13 @@ export function ContactForm() {
           htmlFor="cf-email"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
-          Email Address <span className="text-amber-700">*</span>
+          {t.contactForm.email} <span className="text-amber-700">*</span>
         </label>
         <input
           id="cf-email"
           type="email"
           autoComplete="email"
-          placeholder="you@example.com"
+          placeholder={t.contactForm.emailPlaceholder}
           className={inputClass(!!errors.email)}
           {...register("email")}
         />
@@ -144,12 +146,12 @@ export function ContactForm() {
           htmlFor="cf-message"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300"
         >
-          Enquiry / Requirement <span className="text-amber-700">*</span>
+          {t.contactForm.message} <span className="text-amber-700">*</span>
         </label>
         <textarea
           id="cf-message"
           rows={4}
-          placeholder="Briefly describe your legal matter or enquiry…"
+          placeholder={t.contactForm.messagePlaceholder}
           className={cn(inputClass(!!errors.message), "resize-none")}
           {...register("message")}
         />
@@ -164,11 +166,9 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
         <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto">
-          {isSubmitting ? "Sending…" : "Submit Enquiry"}
+          {isSubmitting ? t.contactForm.submitting : t.contactForm.submit}
         </Button>
-        <p className="text-xs text-gray-400">
-          All communications are treated with strict professional confidentiality.
-        </p>
+        <p className="text-xs text-gray-400">{t.contactForm.confidentiality}</p>
       </div>
     </form>
   );
