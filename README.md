@@ -26,7 +26,7 @@ Professional portfolio website for **Rekha Nair**, an advocate based in Kerala, 
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone <https://github.com/adv-rekhanair/adv-rekhanair>
 cd adv-rekhanair
 
 # Install dependencies

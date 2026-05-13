@@ -60,22 +60,6 @@ pnpm release      # Interactive release + CHANGELOG update
 pnpm release:dry  # Dry-run release to preview version bump
 ```
 
-## Commit Convention
-
-All commits must follow **Conventional Commits** — enforced by commitlint on every commit.
-
-```
-<type>(<scope>): <subject>
-
-Types: feat | fix | docs | style | refactor | perf | test | build | ci | chore | revert
-```
-
-Examples:
-
-- `feat(hero): add animated scroll indicator`
-- `fix(contact): correct email validation regex`
-- `docs: update practice areas copy`
-
 ## Code Style Rules
 
 - **No comments** unless the WHY is non-obvious (hidden constraints, workarounds).
@@ -108,10 +92,7 @@ Advocates may maintain a website containing **only**:
 
 ### Disclaimer popup (BCI requirement)
 
-A **disclaimer modal** (`src/components/ui/disclaimer-modal.tsx`) is shown on every new browser
-session via `sessionStorage`. It blocks the page until the user actively accepts. This is standard
-practice across Indian law firm websites and signals that the site is informational, not
-promotional.
+A **disclaimer modal** (`src/components/ui/disclaimer-modal.tsx`) is shown on every new browser session via `sessionStorage`. It blocks the page until the user actively accepts. This is standard practice across Indian law firm websites and signals that the site is informational, not promotional.
 
 When writing any copy for this site:
 
@@ -120,8 +101,7 @@ When writing any copy for this site:
 - Frame everything as information the user is seeking voluntarily, not marketing directed at them.
 - Never add call-to-action language like "hire us", "get a free consultation", or "contact us today".
 
-Violation of Rule 36 can result in disciplinary proceedings under Section 35 of the Advocates
-Act, 1961.
+Violation of Rule 36 can result in disciplinary proceedings under Section 35 of the Advocates Act, 1961.
 
 ## Domain Context
 
@@ -130,7 +110,6 @@ Rekha Nair practices law in Kerala. Key practice areas likely include:
 - Civil litigation
 - Family law / matrimonial disputes
 - Property / land disputes
-- Criminal defence
 - Consumer forums
 - High Court appearances (Kerala High Court)
 

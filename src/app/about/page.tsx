@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Card } from "@/components/ui/card";
 import { FadeUp } from "@/components/ui/motion";
+import { empanelments } from "@/data/empanelments";
 
 export const metadata: Metadata = {
   title: "About",
@@ -44,6 +45,28 @@ export default function AboutPage() {
             <li>Enrolled Advocate — Bar Council of Kerala ({siteConfig.barCouncilNo})</li>
             <li>Member — Kerala High Court Advocates Association</li>
           </ul>
+        </Card>
+      </FadeUp>
+
+      <FadeUp delay={0.3} className="mt-8">
+        <Card className="p-8">
+          <h2 className="text-xl font-semibold text-gray-900">Panel Appointments</h2>
+          <p className="mt-1 text-sm text-gray-500">
+            Empanelled as legal counsel by the following financial institutions.
+          </p>
+          <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {empanelments.map((item) => (
+              <div
+                key={item.name}
+                className="rounded-md border border-gray-100 bg-gray-50 px-4 py-3"
+              >
+                <p className="text-sm font-semibold text-gray-900">{item.name}</p>
+                <p className="mt-0.5 text-xs font-medium tracking-wide text-gray-400 uppercase">
+                  {item.category}
+                </p>
+              </div>
+            ))}
+          </div>
         </Card>
       </FadeUp>
     </div>

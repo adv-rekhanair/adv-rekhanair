@@ -33,8 +33,7 @@ export function ContactSection() {
           transition={{ duration: 0.55, ease }}
           className="mx-auto mt-4 max-w-xl text-base text-gray-600"
         >
-          Contact details are provided below for general enquiries. All communications are treated
-          with strict professional confidentiality.
+          Contact details are provided below for general enquiries.
         </motion.p>
 
         <motion.div
