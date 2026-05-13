@@ -68,6 +68,18 @@ export default function ContactPage() {
         </Card>
       </FadeUp>
 
+      <FadeUp delay={0.25} className="mt-10 overflow-hidden rounded-xl border border-gray-200">
+        <iframe
+          src={siteConfig.mapEmbedUrl}
+          width="100%"
+          height="340"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Office location on Google Maps"
+          className="block"
+        />
+      </FadeUp>
+
       <FadeUp delay={0.3} className="mt-14">
         <h2 className="text-xl font-semibold tracking-tight text-gray-900">Send an Enquiry</h2>
         <p className="mt-2 mb-6 text-sm text-gray-600">

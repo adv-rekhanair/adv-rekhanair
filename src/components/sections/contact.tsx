@@ -69,6 +69,22 @@ export function ContactSection() {
         >
           {siteConfig.address}
         </motion.p>
+
+        <motion.div
+          variants={fadeUp}
+          transition={{ duration: 0.55, ease }}
+          className="mx-auto mt-6 w-full max-w-xl overflow-hidden rounded-xl border border-gray-200"
+        >
+          <iframe
+            src={siteConfig.mapEmbedUrl}
+            width="100%"
+            height="280"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Office location on Google Maps"
+            className="block"
+          />
+        </motion.div>
       </motion.div>
     </section>
   );

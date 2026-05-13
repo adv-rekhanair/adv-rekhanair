@@ -9,6 +9,8 @@ export const siteConfig = {
   phone2: "+91 96331 89801",
   address:
     "Room No. 13 & 14, Ground Floor, Empire Building, Opposite Central Police Station, Near High Court, Kochi, Kerala — 682 018",
+  mapEmbedUrl:
+    "https://maps.google.com/maps?q=Ground+Floor,+Advocate+Rekha+Nair,+Empire+Building,+Room+No:+13,14,+opposite+Central+Police+Station,+Kochi,+Kerala+682018&output=embed",
   barCouncilNo: "KER/XXXX/XXXX",
   nav: [
     { label: "Home", href: "/" },
