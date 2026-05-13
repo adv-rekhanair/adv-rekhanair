@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { AnimatePresence, motion, ease } from "@/components/ui/motion";
 
 export function Navigation() {
   const pathname = usePathname();
@@ -78,31 +79,43 @@ export function Navigation() {
         )}
       </button>
 
-      {open && (
-        <div
-          id="mobile-menu"
-          className="fixed inset-x-0 top-16 z-40 border-b border-gray-200 bg-white shadow-lg md:hidden"
-        >
-          <nav aria-label="Mobile navigation">
-            <ul className="space-y-1 px-4 py-3">
-              {siteConfig.nav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "block rounded-md px-3 py-3 text-base font-medium transition-colors hover:bg-amber-50 hover:text-amber-700",
-                      pathname === item.href ? "bg-amber-50 text-amber-700" : "text-gray-700",
-                    )}
-                    onClick={() => setOpen(false)}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-menu"
+            key="mobile-menu"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.2, ease }}
+            className="fixed inset-x-0 top-16 z-40 border-b border-gray-200 bg-white shadow-lg md:hidden"
+          >
+            <nav aria-label="Mobile navigation">
+              <ul className="space-y-1 px-4 py-3">
+                {siteConfig.nav.map((item, i) => (
+                  <motion.li
+                    key={item.href}
+                    initial={{ opacity: 0, x: -8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.18, ease, delay: i * 0.05 }}
                   >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        "block rounded-md px-3 py-3 text-base font-medium transition-colors hover:bg-amber-50 hover:text-amber-700",
+                        pathname === item.href ? "bg-amber-50 text-amber-700" : "text-gray-700",
+                      )}
+                      onClick={() => setOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Card } from "@/components/ui/card";
+import { FadeUp } from "@/components/ui/motion";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,11 +11,13 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
-      <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">About</p>
-      <h1 className="text-4xl font-bold tracking-tight text-gray-900">Rekha Nair</h1>
-      <p className="mt-2 text-lg text-amber-700">Advocate — Kerala High Court</p>
+      <FadeUp>
+        <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">About</p>
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900">Rekha Nair</h1>
+        <p className="mt-2 text-lg text-amber-700">Advocate — Kerala High Court</p>
+      </FadeUp>
 
-      <div className="mt-10 space-y-5 text-base leading-relaxed text-gray-600">
+      <FadeUp delay={0.1} className="mt-10 space-y-5 text-base leading-relaxed text-gray-600">
         <p>
           Rekha Nair is an advocate enrolled with the Bar Council of Kerala, practising primarily
           before the Kerala High Court and subordinate courts across the state. She has been in
@@ -30,16 +33,18 @@ export default function AboutPage() {
           She practices before the Kerala High Court, District Courts, Family Courts, Sessions
           Courts, and Consumer Dispute Redressal Commissions in the state.
         </p>
-      </div>
+      </FadeUp>
 
-      <Card className="mt-12 p-8">
-        <h2 className="text-xl font-semibold text-gray-900">Qualifications</h2>
-        <ul className="mt-4 space-y-2 text-sm text-gray-600">
-          <li>LL.B — [University Name], Kerala</li>
-          <li>Enrolled Advocate — Bar Council of Kerala</li>
-          <li>Member — Kerala High Court Advocates Association</li>
-        </ul>
-      </Card>
+      <FadeUp delay={0.2} className="mt-12">
+        <Card className="p-8">
+          <h2 className="text-xl font-semibold text-gray-900">Qualifications</h2>
+          <ul className="mt-4 space-y-2 text-sm text-gray-600">
+            <li>LL.B — [University Name], Kerala</li>
+            <li>Enrolled Advocate — Bar Council of Kerala</li>
+            <li>Member — Kerala High Court Advocates Association</li>
+          </ul>
+        </Card>
+      </FadeUp>
     </div>
   );
 }

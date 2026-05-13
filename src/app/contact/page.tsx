@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Card } from "@/components/ui/card";
+import { FadeUp } from "@/components/ui/motion";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -9,14 +10,18 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
-      <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">Contact</p>
-      <h1 className="text-4xl font-bold tracking-tight text-gray-900">Get in Touch</h1>
-      <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600">
-        Contact details are provided below for general enquiries.
-      </p>
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
+      <FadeUp>
+        <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">
+          Contact
+        </p>
+        <h1 className="text-4xl font-bold tracking-tight text-gray-900">Get in Touch</h1>
+        <p className="mt-4 max-w-xl text-base leading-relaxed text-gray-600">
+          Contact details are provided below for general enquiries.
+        </p>
+      </FadeUp>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
+      <FadeUp delay={0.1} className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
         {[
           { label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
           { label: "Phone", value: siteConfig.phone, href: `tel:${siteConfig.phone}` },
@@ -38,14 +43,16 @@ export default function ContactPage() {
             )}
           </Card>
         ))}
-      </div>
+      </FadeUp>
 
-      <Card variant="amber" className="mt-12">
-        <p className="text-sm text-amber-800">
-          <strong>Office Hours:</strong> Monday – Saturday, 10:00 AM – 5:30 PM IST (excluding court
-          holidays).
-        </p>
-      </Card>
+      <FadeUp delay={0.2} className="mt-12">
+        <Card variant="amber">
+          <p className="text-sm text-amber-800">
+            <strong>Office Hours:</strong> Monday – Saturday, 10:00 AM – 5:30 PM IST (excluding
+            court holidays).
+          </p>
+        </Card>
+      </FadeUp>
     </div>
   );
 }
