@@ -22,7 +22,7 @@ const iconMap: Record<PracticeAreaIcon, React.ComponentType<React.SVGProps<SVGSV
 
 export function PracticeAreasSection() {
   return (
-    <section className="bg-white px-4 py-20 sm:px-6 lg:px-8">
+    <section className="bg-white px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">

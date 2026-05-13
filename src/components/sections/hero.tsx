@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="flex min-h-[80vh] flex-col items-center justify-center bg-white px-4 py-20 text-center sm:px-6 lg:px-8">
+    <section className="flex min-h-[70vh] flex-col items-center justify-center bg-white px-4 py-14 text-center sm:min-h-[80vh] sm:px-6 sm:py-20 lg:px-8">
       <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">
         Advocate · Kerala High Court
       </p>

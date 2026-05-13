@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PracticeAreasPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
       <div className="max-w-2xl">
         <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">
           Expertise

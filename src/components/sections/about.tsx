@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 
 export function AboutSection() {
   return (
-    <section className="bg-gray-50 px-4 py-20 sm:px-6 lg:px-8">
+    <section className="bg-gray-50 px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">About</p>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -21,7 +21,7 @@ export function AboutSection() {
             engagement.
           </p>
         </div>
-        <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-3">
+        <dl className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {[
             { label: "Years of Practice", value: "10+" },
             { label: "Courts", value: "High Court & Subordinate" },

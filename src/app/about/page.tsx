@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
       <p className="mb-3 text-sm font-semibold tracking-widest text-amber-700 uppercase">About</p>
       <h1 className="text-4xl font-bold tracking-tight text-gray-900">Rekha Nair</h1>
       <p className="mt-2 text-lg text-amber-700">Advocate — Kerala High Court</p>
