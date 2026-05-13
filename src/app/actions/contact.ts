@@ -1,35 +1,44 @@
 "use server";
 
 import { Resend } from "resend";
+import { z } from "zod";
+import { contactSchema } from "@/lib/contact-schema";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export interface ContactFormState {
   success: boolean;
   error?: string;
+  fieldErrors?: Partial<Record<"name" | "email" | "phone" | "message", string>>;
 }
 
-export async function submitContactForm(
-  _prev: ContactFormState,
-  formData: FormData,
-): Promise<ContactFormState> {
-  const name = (formData.get("name") as string)?.trim();
-  const email = (formData.get("email") as string)?.trim();
-  const phone = (formData.get("phone") as string)?.trim();
-  const message = (formData.get("message") as string)?.trim();
+export async function submitContactForm(formData: FormData): Promise<ContactFormState> {
+  const raw = {
+    name: ((formData.get("name") as string) ?? "").trim(),
+    email: ((formData.get("email") as string) ?? "").trim(),
+    phone: ((formData.get("phone") as string) ?? "").trim(),
+    message: ((formData.get("message") as string) ?? "").trim(),
+  };
 
-  if (!name || !email || !phone || !message) {
-    return { success: false, error: "All fields are required." };
+  const parsed = contactSchema.safeParse(raw);
+  if (!parsed.success) {
+    const flat = z.flattenError(parsed.error).fieldErrors;
+    return {
+      success: false,
+      fieldErrors: {
+        name: flat.name?.[0],
+        email: flat.email?.[0],
+        phone: flat.phone?.[0],
+        message: flat.message?.[0],
+      },
+    };
   }
 
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return { success: false, error: "Please enter a valid email address." };
-  }
-
+  const { name, email, phone, message } = parsed.data;
   const to = process.env.CONTACT_EMAIL ?? "adv.rekhanair@gmail.com";
 
   try {
-    await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "Enquiry Form <onboarding@resend.dev>",
       to,
       replyTo: email,
@@ -45,6 +54,13 @@ export async function submitContactForm(
         </table>
       `,
     });
+
+    if (error) {
+      return {
+        success: false,
+        error: "Unable to send your enquiry. Please try again or email directly.",
+      };
+    }
 
     return { success: true };
   } catch {
