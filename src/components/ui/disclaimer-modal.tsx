@@ -26,12 +26,12 @@ export function DisclaimerModal() {
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
-      <div className="max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-lg bg-white shadow-2xl">
-        <div className="border-b border-gray-200 px-6 py-5">
+      <div className="flex max-h-[90vh] w-full max-w-2xl flex-col rounded-lg bg-white shadow-2xl">
+        <div className="flex-shrink-0 border-b border-gray-200 px-6 py-5">
           <h2 className="text-lg font-semibold text-gray-900">Disclaimer</h2>
         </div>
 
-        <div className="space-y-4 px-6 py-5 text-sm leading-relaxed text-gray-700">
+        <div className="flex-1 space-y-4 overflow-y-auto px-6 py-5 text-sm leading-relaxed text-gray-700">
           <p>
             The rules of the Bar Council of India prohibit advocates from advertising or soliciting
             work in any manner. By proceeding, you acknowledge the following:
@@ -70,7 +70,7 @@ export function DisclaimerModal() {
           </p>
         </div>
 
-        <div className="flex justify-end border-t border-gray-200 px-6 py-4">
+        <div className="flex flex-shrink-0 justify-end border-t border-gray-200 px-6 py-4">
           <Button variant="dark" onClick={handleAccept} className="py-2.5">
             I Agree &amp; Continue
           </Button>
