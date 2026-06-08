@@ -18,7 +18,7 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-      className="rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-amber-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-amber-500"
+      className="cursor-pointer rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-amber-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-amber-500"
     >
       {dark ? (
         <svg

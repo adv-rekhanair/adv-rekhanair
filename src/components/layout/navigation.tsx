@@ -49,7 +49,7 @@ export function Navigation() {
       </nav>
 
       <button
-        className="flex items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-amber-700 md:hidden dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-amber-500"
+        className="flex cursor-pointer items-center justify-center rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-amber-700 md:hidden dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-amber-500"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-expanded={open}
         aria-controls="mobile-menu"

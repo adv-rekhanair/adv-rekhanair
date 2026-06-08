@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { useLanguage } from "@/contexts/language-context";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 import type { Translations } from "@/lib/translations";
 
 const navKeys: Record<string, keyof Translations["nav"]> = {
@@ -75,6 +77,8 @@ export function Footer() {
             © {year} {siteConfig.name}. {t.footer.rights}
           </p>
           <div className="flex items-center gap-4">
+            <LanguageToggle />
+            <ThemeToggle />
             {siteConfig.social.whatsapp && (
               <a
                 href={siteConfig.social.whatsapp}

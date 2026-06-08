@@ -2,8 +2,6 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Navigation } from "./navigation";
 import { BalanceIcon } from "@/components/ui/icons";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { LanguageToggle } from "@/components/ui/language-toggle";
 
 export function Header() {
   return (
@@ -21,8 +19,6 @@ export function Header() {
           </span>
         </Link>
         <div className="flex items-center gap-1">
-          <LanguageToggle />
-          <ThemeToggle />
           <Navigation />
         </div>
       </div>
