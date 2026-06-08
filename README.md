@@ -136,8 +136,6 @@ pnpm release:dry
 pnpm release
 ```
 
-The CHANGELOG is automatically generated from conventional commit messages.
-
 ---
 
 ## Environment Variables
