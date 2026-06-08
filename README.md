@@ -123,21 +123,6 @@ git commit -m "docs: update README with deployment guide"
 
 ---
 
-## Releasing
-
-This project uses [release-it](https://github.com/release-it/release-it) with the
-[@release-it/conventional-changelog](https://github.com/release-it/conventional-changelog) plugin.
-
-```bash
-# Preview the next release (no changes made)
-pnpm release:dry
-
-# Create a release (bumps version, updates CHANGELOG, tags git)
-pnpm release
-```
-
----
-
 ## Environment Variables
 
 Copy `.env.example` to `.env.local` and populate the values.
