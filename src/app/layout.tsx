@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { DisclaimerModal } from "@/components/ui/disclaimer-modal";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { LanguageProvider } from "@/contexts/language-context";
 import { siteConfig } from "@/config/site";
@@ -104,6 +105,7 @@ export default function RootLayout({
             <Header />
             <main className="flex-1">{children}</main>
             <Footer />
+            <WhatsAppButton />
           </LanguageProvider>
         </ThemeProvider>
       </body>
