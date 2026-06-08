@@ -11,7 +11,6 @@ Professional portfolio website for **Rekha Nair**, an advocate based in Kerala, 
 - **Linting**: ESLint 9 + Prettier
 - **Git Hooks**: Husky + lint-staged
 - **Commits**: [Conventional Commits](https://www.conventionalcommits.org/)
-- **Releases**: [release-it](https://github.com/release-it/release-it)
 
 ---
 
